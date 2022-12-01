@@ -1,0 +1,10 @@
+**/__pycache__
+
+*.sqlite3
+
+# 开发日志
+TODO.txt 
+
+draw.py
+
+core/main.spec
