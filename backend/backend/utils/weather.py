@@ -6,10 +6,10 @@ def wea_data():
         df = pd.read_csv(
             r'/home/ubuntu/coding/weather-script/data.txt', names=['date', 'city', 'update_time', 'tem', 'wea'], encoding='UTF-8')
         res = []
-        for i in range(1, df.shape[0], 3):
-            tem = df['tem'][i][2:].split('~')
-            res.append([df['date'][i], int(tem[0]), int(tem[1])])
-        dict = {"wea": res[-7:]}
+        for i in range(7):
+            tem = df['tem'][i*3][2:].split('~')
+            res.append([df['date'][i*3], int(tem[0]), int(tem[1])])
+        dict = {"wea": res}
         return dict
     except:
         return []
